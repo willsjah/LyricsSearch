@@ -17,7 +17,7 @@
 		B501D3DA2881033900DF56C7 /* LyricsSearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B501D3D92881033900DF56C7 /* LyricsSearchUITests.swift */; };
 		B501D3DC2881033900DF56C7 /* LyricsSearchUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B501D3DB2881033900DF56C7 /* LyricsSearchUITestsLaunchTests.swift */; };
 		B501D3E92881053E00DF56C7 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B501D3E82881053E00DF56C7 /* SearchViewController.swift */; };
-		B501D3EB2881057700DF56C7 /* SearchDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B501D3EA2881057700DF56C7 /* SearchDetailsViewController.swift */; };
+		B501D3EB2881057700DF56C7 /* LyricsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B501D3EA2881057700DF56C7 /* LyricsViewController.swift */; };
 		B501D3ED288106F100DF56C7 /* LyricsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B501D3EC288106F100DF56C7 /* LyricsModel.swift */; };
 		B501D3EF2881073700DF56C7 /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B501D3EE2881073700DF56C7 /* NetworkSession.swift */; };
 		B501D3F12881075D00DF56C7 /* LyricsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B501D3F02881075D00DF56C7 /* LyricsDataManager.swift */; };
@@ -55,7 +55,7 @@
 		B501D3D92881033900DF56C7 /* LyricsSearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricsSearchUITests.swift; sourceTree = "<group>"; };
 		B501D3DB2881033900DF56C7 /* LyricsSearchUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricsSearchUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B501D3E82881053E00DF56C7 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		B501D3EA2881057700DF56C7 /* SearchDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailsViewController.swift; sourceTree = "<group>"; };
+		B501D3EA2881057700DF56C7 /* LyricsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricsViewController.swift; sourceTree = "<group>"; };
 		B501D3EC288106F100DF56C7 /* LyricsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricsModel.swift; sourceTree = "<group>"; };
 		B501D3EE2881073700DF56C7 /* NetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; };
 		B501D3F02881075D00DF56C7 /* LyricsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricsDataManager.swift; sourceTree = "<group>"; };
@@ -113,7 +113,7 @@
 				B501D3BA2881033800DF56C7 /* SceneDelegate.swift */,
 				B501D3BC2881033800DF56C7 /* ViewController.swift */,
 				B501D3E82881053E00DF56C7 /* SearchViewController.swift */,
-				B501D3EA2881057700DF56C7 /* SearchDetailsViewController.swift */,
+				B501D3EA2881057700DF56C7 /* LyricsViewController.swift */,
 				B501D3EC288106F100DF56C7 /* LyricsModel.swift */,
 				B501D3F02881075D00DF56C7 /* LyricsDataManager.swift */,
 				B501D3EE2881073700DF56C7 /* NetworkSession.swift */,
@@ -280,7 +280,7 @@
 				B501D3E92881053E00DF56C7 /* SearchViewController.swift in Sources */,
 				B501D3F12881075D00DF56C7 /* LyricsDataManager.swift in Sources */,
 				B501D3BB2881033800DF56C7 /* SceneDelegate.swift in Sources */,
-				B501D3EB2881057700DF56C7 /* SearchDetailsViewController.swift in Sources */,
+				B501D3EB2881057700DF56C7 /* LyricsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

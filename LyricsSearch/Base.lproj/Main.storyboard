@@ -74,10 +74,10 @@
             </objects>
             <point key="canvasLocation" x="1802.8985507246377" y="-27.455357142857142"/>
         </scene>
-        <!--Details-->
+        <!--Lyrics-->
         <scene sceneID="9wk-SO-7Zq">
             <objects>
-                <viewController id="K75-i5-0Kq" customClass="SearchDetailsViewController" customModule="LyricsSearch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="K75-i5-0Kq" customClass="LyricsViewController" customModule="LyricsSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="STd-yZ-Ggr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -99,7 +99,7 @@
                             <constraint firstItem="VgD-xc-YWJ" firstAttribute="trailing" secondItem="uYb-Ct-csG" secondAttribute="trailing" constant="20" id="xXZ-1Z-Yhw"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Details" id="Xte-h2-WA0"/>
+                    <navigationItem key="navigationItem" title="Lyrics" id="Xte-h2-WA0"/>
                     <connections>
                         <outlet property="textView" destination="uYb-Ct-csG" id="eDz-gq-0Tm"/>
                     </connections>

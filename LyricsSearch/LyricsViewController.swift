@@ -1,5 +1,5 @@
 //
-//  SearchDetailsViewController.swift
+//  LyricsViewController.swift
 //  LyricsSearch
 //
 //  Created by William Sjahrial on 2022/7/15.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchDetailsViewController: UIViewController {
+class LyricsViewController: UIViewController {
 
     @IBOutlet weak var textView: UITextView!
     

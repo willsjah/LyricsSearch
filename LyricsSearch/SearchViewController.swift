@@ -50,7 +50,7 @@ class SearchViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "SearchDetailsSegue" {
-            let vc = segue.destination as! SearchDetailsViewController
+            let vc = segue.destination as! LyricsViewController
             vc.lyricsModel = lyricsModel
         }
     }
