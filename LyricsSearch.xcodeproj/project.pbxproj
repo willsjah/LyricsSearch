@@ -115,17 +115,11 @@
 		B501D3B72881033800DF56C7 /* LyricsSearch */ = {
 			isa = PBXGroup;
 			children = (
-				B501D3B82881033800DF56C7 /* AppDelegate.swift */,
-				B501D3BA2881033800DF56C7 /* SceneDelegate.swift */,
-				B501D3BC2881033800DF56C7 /* ViewController.swift */,
-				B501D3E82881053E00DF56C7 /* SearchViewController.swift */,
-				B501D3EA2881057700DF56C7 /* LyricsViewController.swift */,
-				B501D3F22881113F00DF56C7 /* HistoryViewController.swift */,
-				B501D3EC288106F100DF56C7 /* LyricsModel.swift */,
-				B501D3F02881075D00DF56C7 /* LyricsDataManager.swift */,
-				B501D3EE2881073700DF56C7 /* NetworkSession.swift */,
-				B5D8E35C28811B0200D8C794 /* SearchHistoryManager.swift */,
-				B501D3F4288111F900DF56C7 /* SearchHistory.swift */,
+				B5D8E35F28811C4700D8C794 /* App */,
+				B5D8E35E28811C4000D8C794 /* View Controllers */,
+				B5D8E36028811C5300D8C794 /* Model */,
+				B5D8E36128811C5900D8C794 /* Network */,
+				B5D8E36228811C6000D8C794 /* History */,
 				B501D3BE2881033800DF56C7 /* Main.storyboard */,
 				B501D3C12881033900DF56C7 /* Assets.xcassets */,
 				B501D3C32881033900DF56C7 /* LaunchScreen.storyboard */,
@@ -149,6 +143,52 @@
 				B501D3DB2881033900DF56C7 /* LyricsSearchUITestsLaunchTests.swift */,
 			);
 			path = LyricsSearchUITests;
+			sourceTree = "<group>";
+		};
+		B5D8E35E28811C4000D8C794 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B501D3BC2881033800DF56C7 /* ViewController.swift */,
+				B501D3E82881053E00DF56C7 /* SearchViewController.swift */,
+				B501D3EA2881057700DF56C7 /* LyricsViewController.swift */,
+				B501D3F22881113F00DF56C7 /* HistoryViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		B5D8E35F28811C4700D8C794 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				B501D3B82881033800DF56C7 /* AppDelegate.swift */,
+				B501D3BA2881033800DF56C7 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		B5D8E36028811C5300D8C794 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B501D3EC288106F100DF56C7 /* LyricsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B5D8E36128811C5900D8C794 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B501D3F02881075D00DF56C7 /* LyricsDataManager.swift */,
+				B501D3EE2881073700DF56C7 /* NetworkSession.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		B5D8E36228811C6000D8C794 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				B5D8E35C28811B0200D8C794 /* SearchHistoryManager.swift */,
+				B501D3F4288111F900DF56C7 /* SearchHistory.swift */,
+			);
+			path = History;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
