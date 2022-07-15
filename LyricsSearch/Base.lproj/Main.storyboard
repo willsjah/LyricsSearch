@@ -73,13 +73,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="KXm-XG-Saf">
+                                <rect key="frame" x="197" y="300" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="g71-8g-vyB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="KXm-XG-Saf" firstAttribute="top" secondItem="1Ls-BL-ikp" secondAttribute="bottom" constant="8" symbolic="YES" id="0VA-Mr-Quu"/>
                             <constraint firstItem="g71-8g-vyB" firstAttribute="trailing" secondItem="8DU-z4-XFK" secondAttribute="trailing" constant="20" id="20t-PJ-QYJ"/>
                             <constraint firstItem="NEh-jE-0ne" firstAttribute="top" secondItem="g71-8g-vyB" secondAttribute="top" constant="60" id="4sH-h8-XIz"/>
                             <constraint firstItem="g71-8g-vyB" firstAttribute="trailing" secondItem="NEh-jE-0ne" secondAttribute="trailing" constant="20" id="JI9-Nd-Fta"/>
+                            <constraint firstItem="KXm-XG-Saf" firstAttribute="centerX" secondItem="Ne9-zg-QxJ" secondAttribute="centerX" id="Nt7-Bg-eDz"/>
                             <constraint firstItem="1Ls-BL-ikp" firstAttribute="top" secondItem="8DU-z4-XFK" secondAttribute="bottom" constant="8" id="Ruj-rW-t8r"/>
                             <constraint firstItem="3ya-vt-BUq" firstAttribute="leading" secondItem="g71-8g-vyB" secondAttribute="leading" constant="20" id="SLe-PB-yXi"/>
                             <constraint firstItem="g71-8g-vyB" firstAttribute="trailing" secondItem="3ya-vt-BUq" secondAttribute="trailing" constant="20" id="V8Q-ZM-Cxn"/>
@@ -95,6 +100,7 @@
                         <outlet property="artistTextField" destination="3ya-vt-BUq" id="KWg-4O-gIZ"/>
                         <outlet property="instructionsLabel" destination="NEh-jE-0ne" id="UmE-ue-rGT"/>
                         <outlet property="searchButton" destination="1Ls-BL-ikp" id="kRf-eF-QA0"/>
+                        <outlet property="spinner" destination="KXm-XG-Saf" id="6WE-mj-rvh"/>
                         <outlet property="titleTextField" destination="8DU-z4-XFK" id="mT3-SA-J3f"/>
                         <segue destination="K75-i5-0Kq" kind="show" identifier="SearchDetailsSegue" id="tel-fn-JhR"/>
                     </connections>

@@ -13,6 +13,7 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var artistTextField: UITextField!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     private let session = NetworkSession()
     
@@ -45,14 +46,26 @@ class SearchViewController: UIViewController {
     private func search(artist: String, title: String) {
         print(#function)
         
+        // Disable Search
+        enableSearch(false)
+        spinner.startAnimating()
+        
         let dataManager = LyricsDataManager(session: session)
         
         Task {
             do {
                 lyricsModel = try await dataManager.getLyrics(artist: artist, title: title)
-                print(lyricsModel)
+                print("SUCCESS: \(lyricsModel)")
+                
+                // Re-enable Search
+                enableSearch(true)
+                spinner.stopAnimating()
             } catch {
                 popupError(error)
+                
+                // Re-enable Search
+                enableSearch(true)
+                spinner.stopAnimating()
                 return
             }            
             
@@ -71,6 +84,12 @@ class SearchViewController: UIViewController {
     }
     
     // MARK: - Helper Methods
+    
+    private func enableSearch(_ isEnabled: Bool) {
+        artistTextField.isEnabled = isEnabled
+        titleTextField.isEnabled = isEnabled
+        searchButton.isEnabled = isEnabled
+    }
     
     private func popupError(_ error: String) {
         let alert = UIAlertController(title: "Error",
