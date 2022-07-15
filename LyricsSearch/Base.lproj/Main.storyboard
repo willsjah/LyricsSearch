@@ -50,23 +50,52 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ls-BL-ikp">
-                                <rect key="frame" x="172.5" y="432.5" width="69" height="31"/>
+                                <rect key="frame" x="172.5" y="261" width="69" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Search"/>
                                 <connections>
                                     <action selector="searchButtonTapped:" destination="CyK-eX-JAx" eventType="touchUpInside" id="pxT-HS-Sg5"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Artist Name e.g. Coldplay" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3ya-vt-BUq">
+                                <rect key="frame" x="20" y="177" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Song Title e.g. Adventure of a Lifetime" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8DU-z4-XFK">
+                                <rect key="frame" x="20" y="219" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search Song Lyrics:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEh-jE-0ne">
+                                <rect key="frame" x="20" y="148" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="g71-8g-vyB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="1Ls-BL-ikp" firstAttribute="centerY" secondItem="Ne9-zg-QxJ" secondAttribute="centerY" id="Kw7-CY-x3e"/>
+                            <constraint firstItem="g71-8g-vyB" firstAttribute="trailing" secondItem="8DU-z4-XFK" secondAttribute="trailing" constant="20" id="20t-PJ-QYJ"/>
+                            <constraint firstItem="NEh-jE-0ne" firstAttribute="top" secondItem="g71-8g-vyB" secondAttribute="top" constant="60" id="4sH-h8-XIz"/>
+                            <constraint firstItem="g71-8g-vyB" firstAttribute="trailing" secondItem="NEh-jE-0ne" secondAttribute="trailing" constant="20" id="JI9-Nd-Fta"/>
+                            <constraint firstItem="1Ls-BL-ikp" firstAttribute="top" secondItem="8DU-z4-XFK" secondAttribute="bottom" constant="8" id="Ruj-rW-t8r"/>
+                            <constraint firstItem="3ya-vt-BUq" firstAttribute="leading" secondItem="g71-8g-vyB" secondAttribute="leading" constant="20" id="SLe-PB-yXi"/>
+                            <constraint firstItem="g71-8g-vyB" firstAttribute="trailing" secondItem="3ya-vt-BUq" secondAttribute="trailing" constant="20" id="V8Q-ZM-Cxn"/>
                             <constraint firstItem="1Ls-BL-ikp" firstAttribute="centerX" secondItem="Ne9-zg-QxJ" secondAttribute="centerX" id="Z12-3P-BOL"/>
+                            <constraint firstItem="8DU-z4-XFK" firstAttribute="top" secondItem="3ya-vt-BUq" secondAttribute="bottom" constant="8" symbolic="YES" id="ZbU-WT-Mx4"/>
+                            <constraint firstItem="8DU-z4-XFK" firstAttribute="leading" secondItem="g71-8g-vyB" secondAttribute="leading" constant="20" id="glf-NI-Tpf"/>
+                            <constraint firstItem="3ya-vt-BUq" firstAttribute="top" secondItem="NEh-jE-0ne" secondAttribute="bottom" constant="8" symbolic="YES" id="s5D-kr-575"/>
+                            <constraint firstItem="NEh-jE-0ne" firstAttribute="leading" secondItem="g71-8g-vyB" secondAttribute="leading" constant="20" id="tWn-E6-rOy"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="t7d-oF-tas"/>
                     <connections>
+                        <outlet property="artistTextField" destination="3ya-vt-BUq" id="KWg-4O-gIZ"/>
+                        <outlet property="instructionsLabel" destination="NEh-jE-0ne" id="UmE-ue-rGT"/>
+                        <outlet property="searchButton" destination="1Ls-BL-ikp" id="kRf-eF-QA0"/>
+                        <outlet property="titleTextField" destination="8DU-z4-XFK" id="mT3-SA-J3f"/>
                         <segue destination="K75-i5-0Kq" kind="show" identifier="SearchDetailsSegue" id="tel-fn-JhR"/>
                     </connections>
                 </viewController>

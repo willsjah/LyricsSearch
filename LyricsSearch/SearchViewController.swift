@@ -9,6 +9,11 @@ import UIKit
 
 class SearchViewController: UIViewController {
     
+    @IBOutlet weak var instructionsLabel: UILabel!
+    @IBOutlet weak var artistTextField: UITextField!
+    @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var searchButton: UIButton!
+    
     private let session = NetworkSession()
     
     var lyricsModel: LyricsModel?
@@ -20,22 +25,32 @@ class SearchViewController: UIViewController {
     }
     
     @IBAction func searchButtonTapped(_ sender: Any) {
+    
+        guard let inputArtist = artistTextField.text, !inputArtist.isEmpty else {
+            popupError("Please enter artist name")
+            return
+        }
         
-        search()
+        guard let inputTitle = titleTextField.text, !inputTitle.isEmpty else {
+            popupError("Please enter song title")
+            return
+        }
         
+        print("input artist: \(inputArtist)")
+        print("input title: \(inputTitle)")
+    
+        search(artist: inputArtist, title: inputTitle)
     }
     
-    private func search() {
+    private func search(artist: String, title: String) {
         print(#function)
         
         let dataManager = LyricsDataManager(session: session)
         
         Task {
             do {
-                let artist = "Coldplay"
-                let title = "Adventure of a Lifetime"
                 lyricsModel = try await dataManager.getLyrics(artist: artist, title: title)
-                print("SUCCESS lyricsModel: \(lyricsModel)")
+                print(lyricsModel)
             } catch {
                 popupError(error)
                 return
@@ -56,6 +71,14 @@ class SearchViewController: UIViewController {
     }
     
     // MARK: - Helper Methods
+    
+    private func popupError(_ error: String) {
+        let alert = UIAlertController(title: "Error",
+                                      message: error,
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        self.present(alert, animated: true)
+    }
     
     private func popupError(_ error: Error) {
         let alert = UIAlertController(title: "Error",
