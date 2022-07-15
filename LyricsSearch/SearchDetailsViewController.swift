@@ -9,10 +9,20 @@ import UIKit
 
 class SearchDetailsViewController: UIViewController {
 
+    @IBOutlet weak var textView: UITextView!
+    
+    var lyricsModel: LyricsModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         title = "Details"
+        
+        if let lyricsModel = lyricsModel {
+            textView.text = lyricsModel.lyrics
+        } else {
+            textView.text = "(Lyrics not found)"
+        }
     }
     
 

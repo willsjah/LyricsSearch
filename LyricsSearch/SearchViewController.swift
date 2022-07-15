@@ -8,8 +8,10 @@
 import UIKit
 
 class SearchViewController: UIViewController {
-
-    var searchResults = [ "One", "Two", "Three" ]
+    
+    private let session = NetworkSession()
+    
+    var lyricsModel: LyricsModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,34 +19,50 @@ class SearchViewController: UIViewController {
         title = "Search"
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}
-
-extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return searchResults.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SearchCell", for: indexPath)
-        cell.textLabel?.text = searchResults[indexPath.row]
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: false)
+    @IBAction func searchButtonTapped(_ sender: Any) {
         
-        performSegue(withIdentifier: "SearchDetailsSegue", sender: nil)
+        search()
+        
     }
+    
+    private func search() {
+        print(#function)
+        
+        let dataManager = LyricsDataManager(session: session)
+        
+        Task {
+            do {
+                let artist = "Coldplay"
+                let title = "Adventure of a Lifetime"
+                lyricsModel = try await dataManager.getLyrics(artist: artist, title: title)
+                print("SUCCESS lyricsModel: \(lyricsModel)")
+            } catch {
+                popupError(error)
+                return
+            }            
+            
+            performSegue(withIdentifier: "SearchDetailsSegue", sender: nil)
+        }
+        
+    }
+        
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SearchDetailsSegue" {
+            let vc = segue.destination as! SearchDetailsViewController
+            vc.lyricsModel = lyricsModel
+        }
+    }
+    
+    // MARK: - Helper Methods
+    
+    private func popupError(_ error: Error) {
+        let alert = UIAlertController(title: "Error",
+                                      message: error.localizedDescription,
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        self.present(alert, animated: true)
+    }
+    
 }

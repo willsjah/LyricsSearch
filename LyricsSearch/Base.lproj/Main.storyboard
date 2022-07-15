@@ -49,48 +49,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hOT-Eg-FUw">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchCell" textLabel="3jY-hF-Zb6" detailTextLabel="5gA-aF-hQh" style="IBUITableViewCellStyleSubtitle" id="g6k-mi-OGe">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="g6k-mi-OGe" id="Ku3-kB-nfT">
-                                            <rect key="frame" x="0.0" y="0.0" width="385.5" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3jY-hF-Zb6">
-                                                    <rect key="frame" x="20" y="6" width="25" height="14.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5gA-aF-hQh">
-                                                    <rect key="frame" x="20" y="22.5" width="40.5" height="13.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ls-BL-ikp">
+                                <rect key="frame" x="172.5" y="432.5" width="69" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Search"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="CyK-eX-JAx" id="6eN-cF-l3w"/>
-                                    <outlet property="delegate" destination="CyK-eX-JAx" id="NQS-iH-TA2"/>
+                                    <action selector="searchButtonTapped:" destination="CyK-eX-JAx" eventType="touchUpInside" id="pxT-HS-Sg5"/>
                                 </connections>
-                            </tableView>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="g71-8g-vyB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="hOT-Eg-FUw" secondAttribute="bottom" id="5Sm-WH-upP"/>
-                            <constraint firstItem="hOT-Eg-FUw" firstAttribute="top" secondItem="Ne9-zg-QxJ" secondAttribute="top" id="DwW-Xh-qoW"/>
-                            <constraint firstItem="hOT-Eg-FUw" firstAttribute="trailing" secondItem="g71-8g-vyB" secondAttribute="trailing" id="Giq-6S-Kci"/>
-                            <constraint firstItem="hOT-Eg-FUw" firstAttribute="leading" secondItem="g71-8g-vyB" secondAttribute="leading" id="bBI-pS-dte"/>
+                            <constraint firstItem="1Ls-BL-ikp" firstAttribute="centerY" secondItem="Ne9-zg-QxJ" secondAttribute="centerY" id="Kw7-CY-x3e"/>
+                            <constraint firstItem="1Ls-BL-ikp" firstAttribute="centerX" secondItem="Ne9-zg-QxJ" secondAttribute="centerX" id="Z12-3P-BOL"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="t7d-oF-tas"/>
@@ -109,14 +81,32 @@
                     <view key="view" contentMode="scaleToFill" id="STd-yZ-Ggr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lyrics" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uYb-Ct-csG">
+                                <rect key="frame" x="20" y="88" width="374" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="VgD-xc-YWJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="uYb-Ct-csG" firstAttribute="top" secondItem="VgD-xc-YWJ" secondAttribute="top" id="1sh-Hr-ooL"/>
+                            <constraint firstItem="uYb-Ct-csG" firstAttribute="bottom" secondItem="VgD-xc-YWJ" secondAttribute="bottom" id="Y8P-wD-alG"/>
+                            <constraint firstItem="uYb-Ct-csG" firstAttribute="leading" secondItem="VgD-xc-YWJ" secondAttribute="leading" constant="20" id="kys-aV-GcV"/>
+                            <constraint firstItem="VgD-xc-YWJ" firstAttribute="trailing" secondItem="uYb-Ct-csG" secondAttribute="trailing" constant="20" id="xXZ-1Z-Yhw"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Details" id="Xte-h2-WA0"/>
+                    <connections>
+                        <outlet property="textView" destination="uYb-Ct-csG" id="eDz-gq-0Tm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cjm-SH-k5N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2707" y="-27"/>
+            <point key="canvasLocation" x="2705.7971014492755" y="-27.455357142857142"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="G74-TV-EME">
@@ -138,6 +128,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
