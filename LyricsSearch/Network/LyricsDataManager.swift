@@ -20,7 +20,7 @@ class LyricsDataManager {
         
         let artistParam = artist.encodeUrl()
         let titleParam = title.encodeUrl()
-        let urlString =  "https://private-anon-417e289239-lyricsovh.apiary-mock.com/v1/\(artistParam)/\(titleParam)"
+        let urlString =  "https://api.lyrics.ovh/v1/\(artistParam)/\(titleParam)"
         
         print("artistParam: \(artistParam)")
         print("titleParam: \(titleParam)")
