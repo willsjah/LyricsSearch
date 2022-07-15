@@ -23,6 +23,12 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
 
         title = "Search"
+        
+        let historyButton = UIBarButtonItem(title: "History",
+                                            style: .plain,
+                                            target: self,
+                                            action: #selector(historyButtonTapped))
+        navigationItem.rightBarButtonItem = historyButton
     }
     
     @IBAction func searchButtonTapped(_ sender: Any) {
@@ -42,6 +48,8 @@ class SearchViewController: UIViewController {
     
         search(artist: inputArtist, title: inputTitle)
     }
+    
+    // MARK: - Search
     
     private func search(artist: String, title: String) {
         print(#function)
@@ -72,6 +80,12 @@ class SearchViewController: UIViewController {
             performSegue(withIdentifier: "SearchDetailsSegue", sender: nil)
         }
         
+    }
+    
+    // MARK: - History
+    
+    @objc func historyButtonTapped() {
+        performSegue(withIdentifier: "HistorySegue", sender: nil)
     }
         
     // MARK: - Navigation
