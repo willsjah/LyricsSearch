@@ -11,9 +11,13 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        title = "Welcome"
     }
 
-
+    @IBAction func startButtonTapped(_ sender: Any) {
+        performSegue(withIdentifier: "SearchSegue", sender: nil)
+    }
+    
 }
 

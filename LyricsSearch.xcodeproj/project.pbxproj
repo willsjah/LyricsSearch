@@ -16,6 +16,8 @@
 		B501D3D02881033900DF56C7 /* LyricsSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B501D3CF2881033900DF56C7 /* LyricsSearchTests.swift */; };
 		B501D3DA2881033900DF56C7 /* LyricsSearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B501D3D92881033900DF56C7 /* LyricsSearchUITests.swift */; };
 		B501D3DC2881033900DF56C7 /* LyricsSearchUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B501D3DB2881033900DF56C7 /* LyricsSearchUITestsLaunchTests.swift */; };
+		B501D3E92881053E00DF56C7 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B501D3E82881053E00DF56C7 /* SearchViewController.swift */; };
+		B501D3EB2881057700DF56C7 /* SearchDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B501D3EA2881057700DF56C7 /* SearchDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		B501D3D52881033900DF56C7 /* LyricsSearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LyricsSearchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B501D3D92881033900DF56C7 /* LyricsSearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricsSearchUITests.swift; sourceTree = "<group>"; };
 		B501D3DB2881033900DF56C7 /* LyricsSearchUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricsSearchUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B501D3E82881053E00DF56C7 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		B501D3EA2881057700DF56C7 /* SearchDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,8 @@
 				B501D3B82881033800DF56C7 /* AppDelegate.swift */,
 				B501D3BA2881033800DF56C7 /* SceneDelegate.swift */,
 				B501D3BC2881033800DF56C7 /* ViewController.swift */,
+				B501D3E82881053E00DF56C7 /* SearchViewController.swift */,
+				B501D3EA2881057700DF56C7 /* SearchDetailsViewController.swift */,
 				B501D3BE2881033800DF56C7 /* Main.storyboard */,
 				B501D3C12881033900DF56C7 /* Assets.xcassets */,
 				B501D3C32881033900DF56C7 /* LaunchScreen.storyboard */,
@@ -260,7 +266,9 @@
 			files = (
 				B501D3BD2881033800DF56C7 /* ViewController.swift in Sources */,
 				B501D3B92881033800DF56C7 /* AppDelegate.swift in Sources */,
+				B501D3E92881053E00DF56C7 /* SearchViewController.swift in Sources */,
 				B501D3BB2881033800DF56C7 /* SceneDelegate.swift in Sources */,
+				B501D3EB2881057700DF56C7 /* SearchDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,6 +448,7 @@
 				DEVELOPMENT_TEAM = 6CLTKYHZ4V;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LyricsSearch/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Lyrics;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -468,6 +477,7 @@
 				DEVELOPMENT_TEAM = 6CLTKYHZ4V;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LyricsSearch/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Lyrics;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
