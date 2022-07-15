@@ -9,20 +9,22 @@ import UIKit
 
 class LyricsViewController: UIViewController {
 
-    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var artistLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var lyricsTextView: UITextView!
     
-    var lyricsModel: LyricsModel?
+    var artistName: String?
+    var songTitle: String?
+    var lyrics: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         title = "Details"
         
-        if let lyricsModel = lyricsModel {
-            textView.text = lyricsModel.lyrics
-        } else {
-            textView.text = "(Lyrics not found)"
-        }
+        artistLabel.text = artistName
+        titleLabel.text = songTitle
+        lyricsTextView.text = lyrics        
     }
     
 

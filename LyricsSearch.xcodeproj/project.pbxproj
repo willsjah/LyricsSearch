@@ -22,6 +22,8 @@
 		B501D3EF2881073700DF56C7 /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B501D3EE2881073700DF56C7 /* NetworkSession.swift */; };
 		B501D3F12881075D00DF56C7 /* LyricsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B501D3F02881075D00DF56C7 /* LyricsDataManager.swift */; };
 		B501D3F32881113F00DF56C7 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B501D3F22881113F00DF56C7 /* HistoryViewController.swift */; };
+		B501D3F5288111F900DF56C7 /* SearchHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B501D3F4288111F900DF56C7 /* SearchHistory.swift */; };
+		B5D8E35D28811B0200D8C794 /* SearchHistoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D8E35C28811B0200D8C794 /* SearchHistoryManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		B501D3EE2881073700DF56C7 /* NetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; };
 		B501D3F02881075D00DF56C7 /* LyricsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricsDataManager.swift; sourceTree = "<group>"; };
 		B501D3F22881113F00DF56C7 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		B501D3F4288111F900DF56C7 /* SearchHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistory.swift; sourceTree = "<group>"; };
+		B5D8E35C28811B0200D8C794 /* SearchHistoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +124,8 @@
 				B501D3EC288106F100DF56C7 /* LyricsModel.swift */,
 				B501D3F02881075D00DF56C7 /* LyricsDataManager.swift */,
 				B501D3EE2881073700DF56C7 /* NetworkSession.swift */,
+				B5D8E35C28811B0200D8C794 /* SearchHistoryManager.swift */,
+				B501D3F4288111F900DF56C7 /* SearchHistory.swift */,
 				B501D3BE2881033800DF56C7 /* Main.storyboard */,
 				B501D3C12881033900DF56C7 /* Assets.xcassets */,
 				B501D3C32881033900DF56C7 /* LaunchScreen.storyboard */,
@@ -278,12 +284,14 @@
 			files = (
 				B501D3EF2881073700DF56C7 /* NetworkSession.swift in Sources */,
 				B501D3BD2881033800DF56C7 /* ViewController.swift in Sources */,
+				B501D3F5288111F900DF56C7 /* SearchHistory.swift in Sources */,
 				B501D3ED288106F100DF56C7 /* LyricsModel.swift in Sources */,
 				B501D3B92881033800DF56C7 /* AppDelegate.swift in Sources */,
 				B501D3E92881053E00DF56C7 /* SearchViewController.swift in Sources */,
 				B501D3F12881075D00DF56C7 /* LyricsDataManager.swift in Sources */,
 				B501D3F32881113F00DF56C7 /* HistoryViewController.swift in Sources */,
 				B501D3BB2881033800DF56C7 /* SceneDelegate.swift in Sources */,
+				B5D8E35D28811B0200D8C794 /* SearchHistoryManager.swift in Sources */,
 				B501D3EB2881057700DF56C7 /* LyricsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

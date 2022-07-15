@@ -97,12 +97,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="t7d-oF-tas"/>
                     <connections>
-                        <outlet property="artistTextField" destination="3ya-vt-BUq" id="KWg-4O-gIZ"/>
+                        <outlet property="artistNameTextField" destination="3ya-vt-BUq" id="KWg-4O-gIZ"/>
                         <outlet property="instructionsLabel" destination="NEh-jE-0ne" id="UmE-ue-rGT"/>
                         <outlet property="searchButton" destination="1Ls-BL-ikp" id="kRf-eF-QA0"/>
+                        <outlet property="songTitleTextField" destination="8DU-z4-XFK" id="mT3-SA-J3f"/>
                         <outlet property="spinner" destination="KXm-XG-Saf" id="6WE-mj-rvh"/>
-                        <outlet property="titleTextField" destination="8DU-z4-XFK" id="mT3-SA-J3f"/>
-                        <segue destination="K75-i5-0Kq" kind="show" identifier="SearchDetailsSegue" id="tel-fn-JhR"/>
+                        <segue destination="K75-i5-0Kq" kind="show" identifier="LyricsSegue" id="tel-fn-JhR"/>
                         <segue destination="IZt-yr-poM" kind="show" identifier="HistorySegue" id="tiR-A2-fKp"/>
                     </connections>
                 </viewController>
@@ -118,26 +118,73 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lyrics" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uYb-Ct-csG">
-                                <rect key="frame" x="20" y="88" width="374" height="774"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Lyrics" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uYb-Ct-csG">
+                                <rect key="frame" x="20" y="220" width="374" height="642"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EBY-Ws-atw">
+                                <rect key="frame" x="20" y="88" width="374" height="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNx-JG-x8f">
+                                <rect key="frame" x="20" y="141.5" width="374" height="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zY2-De-PbA">
+                                <rect key="frame" x="20" y="166.5" width="374" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="artist" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZf-Fo-y23">
+                                <rect key="frame" x="20" y="113" width="374" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lyrics" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISh-Ve-juR">
+                                <rect key="frame" x="20" y="195" width="374" height="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="VgD-xc-YWJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="uYb-Ct-csG" firstAttribute="top" secondItem="VgD-xc-YWJ" secondAttribute="top" id="1sh-Hr-ooL"/>
+                            <constraint firstItem="EBY-Ws-atw" firstAttribute="top" secondItem="VgD-xc-YWJ" secondAttribute="top" id="0bS-g0-iJI"/>
+                            <constraint firstItem="zY2-De-PbA" firstAttribute="leading" secondItem="VgD-xc-YWJ" secondAttribute="leading" constant="20" id="2Vp-uE-f1M"/>
+                            <constraint firstItem="ISh-Ve-juR" firstAttribute="leading" secondItem="VgD-xc-YWJ" secondAttribute="leading" constant="20" id="7Lf-uK-dIp"/>
+                            <constraint firstItem="tNx-JG-x8f" firstAttribute="leading" secondItem="VgD-xc-YWJ" secondAttribute="leading" constant="20" id="GFV-D4-byW"/>
+                            <constraint firstItem="EBY-Ws-atw" firstAttribute="leading" secondItem="VgD-xc-YWJ" secondAttribute="leading" constant="20" id="JUj-95-y4o"/>
+                            <constraint firstItem="ISh-Ve-juR" firstAttribute="top" secondItem="zY2-De-PbA" secondAttribute="bottom" constant="8" symbolic="YES" id="KSw-21-6j1"/>
                             <constraint firstItem="uYb-Ct-csG" firstAttribute="bottom" secondItem="VgD-xc-YWJ" secondAttribute="bottom" id="Y8P-wD-alG"/>
+                            <constraint firstItem="VgD-xc-YWJ" firstAttribute="trailing" secondItem="zY2-De-PbA" secondAttribute="trailing" constant="20" id="Z1l-0U-9UK"/>
+                            <constraint firstItem="tNx-JG-x8f" firstAttribute="top" secondItem="gZf-Fo-y23" secondAttribute="bottom" constant="8" symbolic="YES" id="aZh-hL-tnr"/>
+                            <constraint firstItem="gZf-Fo-y23" firstAttribute="leading" secondItem="VgD-xc-YWJ" secondAttribute="leading" constant="20" id="dz7-YN-yDX"/>
+                            <constraint firstItem="VgD-xc-YWJ" firstAttribute="trailing" secondItem="ISh-Ve-juR" secondAttribute="trailing" constant="20" id="fZE-7g-145"/>
+                            <constraint firstItem="zY2-De-PbA" firstAttribute="top" secondItem="tNx-JG-x8f" secondAttribute="bottom" constant="8" symbolic="YES" id="gfh-q1-BKB"/>
+                            <constraint firstItem="uYb-Ct-csG" firstAttribute="top" secondItem="ISh-Ve-juR" secondAttribute="bottom" constant="8" symbolic="YES" id="hEr-Tz-6Tc"/>
                             <constraint firstItem="uYb-Ct-csG" firstAttribute="leading" secondItem="VgD-xc-YWJ" secondAttribute="leading" constant="20" id="kys-aV-GcV"/>
+                            <constraint firstItem="VgD-xc-YWJ" firstAttribute="trailing" secondItem="tNx-JG-x8f" secondAttribute="trailing" constant="20" id="qDH-nF-OS8"/>
+                            <constraint firstItem="gZf-Fo-y23" firstAttribute="top" secondItem="EBY-Ws-atw" secondAttribute="bottom" constant="8" symbolic="YES" id="s0c-HD-bza"/>
                             <constraint firstItem="VgD-xc-YWJ" firstAttribute="trailing" secondItem="uYb-Ct-csG" secondAttribute="trailing" constant="20" id="xXZ-1Z-Yhw"/>
+                            <constraint firstItem="VgD-xc-YWJ" firstAttribute="trailing" secondItem="EBY-Ws-atw" secondAttribute="trailing" constant="20" id="yDy-lE-3Av"/>
+                            <constraint firstItem="VgD-xc-YWJ" firstAttribute="trailing" secondItem="gZf-Fo-y23" secondAttribute="trailing" constant="20" id="yeJ-qA-gGp"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Lyrics" id="Xte-h2-WA0"/>
                     <connections>
-                        <outlet property="textView" destination="uYb-Ct-csG" id="eDz-gq-0Tm"/>
+                        <outlet property="artistLabel" destination="gZf-Fo-y23" id="Fvw-3Z-SDz"/>
+                        <outlet property="lyricsTextView" destination="uYb-Ct-csG" id="eDz-gq-0Tm"/>
+                        <outlet property="titleLabel" destination="zY2-De-PbA" id="syc-Ys-bLi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cjm-SH-k5N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -147,25 +194,63 @@
         <!--History-->
         <scene sceneID="N6w-Ma-q09">
             <objects>
-                <viewController id="IZt-yr-poM" sceneMemberID="viewController">
+                <viewController id="IZt-yr-poM" customClass="HistoryViewController" customModule="LyricsSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JWw-ag-f6H">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4b2-JP-TX2">
-                                <rect key="frame" x="120" y="204" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4b2-JP-TX2">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HistoryCell" textLabel="7th-Jj-Ful" detailTextLabel="Gk9-1k-ghV" style="IBUITableViewCellStyleSubtitle" id="YLz-hE-2kU">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YLz-hE-2kU" id="VTc-f4-nh4">
+                                            <rect key="frame" x="0.0" y="0.0" width="385.5" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7th-Jj-Ful">
+                                                    <rect key="frame" x="20" y="6" width="25" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Gk9-1k-ghV">
+                                                    <rect key="frame" x="20" y="22.5" width="40.5" height="13.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="IZt-yr-poM" id="3D6-Jc-vEC"/>
+                                    <outlet property="delegate" destination="IZt-yr-poM" id="sNf-tx-Ffc"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Eml-wD-IzW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="4b2-JP-TX2" secondAttribute="bottom" id="E5Q-ou-6ZC"/>
+                            <constraint firstItem="4b2-JP-TX2" firstAttribute="top" secondItem="JWw-ag-f6H" secondAttribute="top" id="YGh-NA-Smi"/>
+                            <constraint firstItem="4b2-JP-TX2" firstAttribute="leading" secondItem="Eml-wD-IzW" secondAttribute="leading" id="hKh-e9-lpT"/>
+                            <constraint firstItem="4b2-JP-TX2" firstAttribute="trailing" secondItem="Eml-wD-IzW" secondAttribute="trailing" id="q4I-ET-ilm"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="History" id="2Qf-lH-y1Z"/>
+                    <connections>
+                        <segue destination="K75-i5-0Kq" kind="show" identifier="LyricsSegue" id="3Vi-oN-YOl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K6v-Yl-y0T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1803" y="727"/>
+            <point key="canvasLocation" x="1802.8985507246377" y="726.5625"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="G74-TV-EME">
@@ -186,6 +271,9 @@
             <point key="canvasLocation" x="-290" y="-27"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="3Vi-oN-YOl"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

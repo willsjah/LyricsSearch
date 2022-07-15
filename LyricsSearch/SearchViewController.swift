@@ -10,13 +10,15 @@ import UIKit
 class SearchViewController: UIViewController {
     
     @IBOutlet weak var instructionsLabel: UILabel!
-    @IBOutlet weak var artistTextField: UITextField!
-    @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var artistNameTextField: UITextField!
+    @IBOutlet weak var songTitleTextField: UITextField!
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     private let session = NetworkSession()
     
+    var inputArtistName = ""
+    var inputSongTitle = ""
     var lyricsModel: LyricsModel?
     
     override func viewDidLoad() {
@@ -33,25 +35,27 @@ class SearchViewController: UIViewController {
     
     @IBAction func searchButtonTapped(_ sender: Any) {
     
-        guard let inputArtist = artistTextField.text, !inputArtist.isEmpty else {
+        inputArtistName = artistNameTextField.text ?? ""
+        guard !inputArtistName.isEmpty else {
             popupError("Please enter artist name")
             return
         }
         
-        guard let inputTitle = titleTextField.text, !inputTitle.isEmpty else {
+        inputSongTitle = songTitleTextField.text ?? ""
+        guard !inputSongTitle.isEmpty else {
             popupError("Please enter song title")
             return
         }
         
-        print("input artist: \(inputArtist)")
-        print("input title: \(inputTitle)")
+        print("input artist: \(inputArtistName)")
+        print("input title: \(inputSongTitle)")
     
-        search(artist: inputArtist, title: inputTitle)
+        search(artistName: inputArtistName, songTitle: inputSongTitle)
     }
     
     // MARK: - Search
     
-    private func search(artist: String, title: String) {
+    private func search(artistName: String, songTitle: String) {
         print(#function)
         
         // Disable Search
@@ -62,7 +66,7 @@ class SearchViewController: UIViewController {
         
         Task {
             do {
-                lyricsModel = try await dataManager.getLyrics(artist: artist, title: title)
+                lyricsModel = try await dataManager.getLyrics(artist: artistName, title: songTitle)
                 print("SUCCESS: \(lyricsModel)")
                 
                 // Re-enable Search
@@ -77,7 +81,13 @@ class SearchViewController: UIViewController {
                 return
             }            
             
-            performSegue(withIdentifier: "SearchDetailsSegue", sender: nil)
+            if let lyricsModel = lyricsModel {
+                SearchHistoryManager.shared.saveSearchHistory(artistName: artistName,
+                                                              songTitle: songTitle,
+                                                              lyrics: lyricsModel.lyrics)                
+                
+                performSegue(withIdentifier: "LyricsSegue", sender: nil)
+            }
         }
         
     }
@@ -91,17 +101,19 @@ class SearchViewController: UIViewController {
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "SearchDetailsSegue" {
+        if segue.identifier == "LyricsSegue" {
             let vc = segue.destination as! LyricsViewController
-            vc.lyricsModel = lyricsModel
+            vc.artistName = inputArtistName
+            vc.songTitle = inputSongTitle
+            vc.lyrics = lyricsModel?.lyrics ?? "(Lyrics not found)"
         }
     }
     
     // MARK: - Helper Methods
     
     private func enableSearch(_ isEnabled: Bool) {
-        artistTextField.isEnabled = isEnabled
-        titleTextField.isEnabled = isEnabled
+        artistNameTextField.isEnabled = isEnabled
+        songTitleTextField.isEnabled = isEnabled
         searchButton.isEnabled = isEnabled
     }
     
